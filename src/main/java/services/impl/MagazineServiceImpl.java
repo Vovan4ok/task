@@ -6,6 +6,9 @@ import models.Magazine;
 import services.MagazineService;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class MagazineServiceImpl implements MagazineService {
     private MagazineDaoImpl magazineDao;
@@ -43,4 +46,8 @@ public class MagazineServiceImpl implements MagazineService {
     public List<Magazine> readAll() {
         return this.magazineDao.readAll();
     }
+    public Map<Integer, Magazine> readAllMap() {
+        return readAll().stream().collect(Collectors.toMap(Magazine::getId, Function.identity()));
+    }
+
 }
