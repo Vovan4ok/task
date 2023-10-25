@@ -13,27 +13,21 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Date;
 
-@WebServlet("/bucket")
-public class BucketServlet extends HttpServlet {
+@WebServlet("/subscription")
+public class SubscriptionServlet extends HttpServlet {
     private SubscriptionService subscriptionService = SubscriptionServiceImpl.getSubscriptionService();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            String magazineId = request.getParameter("magazineId");
-            Integer subscriptionMonth = Integer.parseInt(request.getParameter("subscriptionMonth"));
+        String magazineId = request.getParameter("magazineId");
 
-            HttpSession session = request.getSession();
-            Integer userId = (Integer) session.getAttribute("userId");
+        HttpSession session = request.getSession();
+        Integer userId = (Integer) session.getAttribute("userId");
 
-            Subscription subscription = new Subscription(userId, Integer.parseInt(magazineId), subscriptionMonth, new Date());
-            subscriptionService.create(subscription);
+        Subscription subscription = new Subscription(userId, Integer.parseInt(magazineId), 1, new Date());
+        subscriptionService.create(subscription);
 
-            response.setCharacterEncoding("UTF-8");
-            response.getWriter().write("Success");
-        } catch(Exception e) {
-            response.setCharacterEncoding("UTF-8");
-            response.getWriter().write("Failure");
-        }
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write("Success");
     }
 }
