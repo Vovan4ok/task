@@ -37,6 +37,7 @@ public class LoginServlet extends HttpServlet {
         } else {
             HttpSession session = request.getSession(true);
             session.setAttribute("userId", user.getId());
+            session.setAttribute("role", user.getRole());
 
             request.getRequestDispatcher("cabinet.jsp").forward(request, response);
         }

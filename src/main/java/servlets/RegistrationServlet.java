@@ -36,6 +36,7 @@ public class RegistrationServlet extends HttpServlet {
 
         HttpSession session = request.getSession(true);
         session.setAttribute("userId", userService.getUserByEmail(userEmail).getId());
+        session.setAttribute("role", user.getRole());
 
         request.getRequestDispatcher("cabinet.jsp").forward(request, response);
     }
