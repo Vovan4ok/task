@@ -17,3 +17,16 @@ $(document).ready(function() {
         });
     });
 });
+
+var userRole = null;
+$.get("user-role", function(data) {
+    if(data !== null) {
+        userRole = data;
+    }
+}).done(function() {
+    if(userRole === 'admin') {
+        $("li.bucket-option").hide();
+    } else {
+        $("li.create-option").hide();
+    }
+});

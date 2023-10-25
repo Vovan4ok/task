@@ -23,3 +23,14 @@ $.get("magazines", function(data) {
 
     $("div.magazineCards").html(cardsContent);
 });
+
+var userRole = null;
+$.get("user-role", function(data) {
+    if(data !== null) {
+        userRole = data;
+    }
+}).done(function() {
+    if(userRole === 'admin') {
+        $("a.card-link").hide();
+    }
+});

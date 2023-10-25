@@ -17,10 +17,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/createMagazine.jsp">Add magazine</a>
+                    <a class="nav-link create-option" href="${pageContext.request.contextPath}/createMagazine.jsp">Add magazine</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/bucket.jsp">Subscription Bucket</a>
+                    <a class="nav-link bucket-option" href="${pageContext.request.contextPath}/bucket.jsp">Subscription Bucket</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-md-auto d-md-flex">
