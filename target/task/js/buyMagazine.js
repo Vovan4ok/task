@@ -1,9 +1,9 @@
-$("button.buy-magazine").click(function() {
+$("button.buy-subscription").click(function() {
    var magazineId = jQuery(this).attr("magazine-id");
 
-   $.post("bucket", {"magazineId": magazineId}, function(data) {
+   $.post("subscription", {"magazineId": magazineId}, function(data) {
        if(data == "Success") {
-           $("#buyMagazineModal").modal("hide");
+           $("#buySubscriptionModal").modal("hide");
        }
-   })
+   });
 });

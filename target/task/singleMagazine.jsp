@@ -3,6 +3,7 @@
 <head>
   <meta charset="ISO-8859-1">
   <title>${magazine.name}</title>
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 </head>
 <body>
   <jsp:include page="header.jsp"></jsp:include>
@@ -16,13 +17,13 @@
           <p class="card-text">${magazine.author}</p>
           <p class="card-text">${magazine.description}</p>
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#buyMagazineModal">buy subscription</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#buySubscriptionModal">Buy subscription</button>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="buyMagazineModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="buySubscriptionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -32,11 +33,11 @@
           </button>
         </div>
         <div class="modal-body">
-          Are you sure that You want to buy this magazine?
+          Are you to buy subscription to this magazine?
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" magazine-id="${magazine.id}" class="btn btn-primary buy-magazine">Buy</button>
+          <button type="button" magazine-id="${magazine.id}" class="btn btn-primary buy-subscription">Buy</button>
         </div>
       </div>
     </div>

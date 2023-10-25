@@ -19,15 +19,21 @@ public class BucketServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String magazineId = request.getParameter("magazineId");
+        try {
+            String magazineId = request.getParameter("magazineId");
+            Integer subscriptionMonth = Integer.parseInt(request.getParameter("subscriptionMonth"));
 
-        HttpSession session = request.getSession();
-        Integer userId = (Integer)session.getAttribute("userId");
+            HttpSession session = request.getSession();
+            Integer userId = (Integer) session.getAttribute("userId");
 
-        Subscription subscription = new Subscription(userId, Integer.parseInt(magazineId), 1, new Date());
-        subscriptionService.create(subscription);
+            Subscription subscription = new Subscription(userId, Integer.parseInt(magazineId), subscriptionMonth, new Date());
+            subscriptionService.create(subscription);
 
-        response.setCharacterEncoding("UTF-8");
-        response.getWriter().write("Success");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write("Success");
+        } catch(Exception e) {
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write("Failure");
+        }
     }
 }

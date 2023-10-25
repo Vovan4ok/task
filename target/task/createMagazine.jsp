@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Create Magazine</title>
-  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 </head>
 <body>
     <jsp:include page="header.jsp"></jsp:include>
