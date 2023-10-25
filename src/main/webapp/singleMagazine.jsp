@@ -47,6 +47,6 @@
   <script src="vendor/bootstrap/js/popper.min.js"></script>
   <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="js/buyMagazine.js"></script>
+  <script src="js/buySubscription.js"></script>
 </body>
 </html>
