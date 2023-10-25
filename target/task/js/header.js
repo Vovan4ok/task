@@ -26,7 +26,7 @@ $.get("user-role", function(data) {
 }).done(function() {
     if(userRole === 'admin') {
         $("li.bucket-option").hide();
-    } else {
+    } else if(userRole === 'default') {
         $("li.create-option").hide();
     }
 });
