@@ -2,26 +2,40 @@ package models;
 
 import javax.persistence.*;
 import java.util.Objects;
+
+@jakarta.persistence.Entity
 @Entity
 @Table(name="user")
-
 public class User {
+    @jakarta.persistence.GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
+    @jakarta.persistence.Id
     @Id
     @Column(name="id")
     @GeneratedValue
+    @jakarta.persistence.Column(name = "id", nullable = false)
     private Integer id;
+    @jakarta.persistence.Basic
     @Column(name="name")
+    @jakarta.persistence.Column(name = "name", nullable = false, length = 45)
     private String name;
+    @jakarta.persistence.Basic
     @Column(name="surname")
+    @jakarta.persistence.Column(name = "surname", nullable = false, length = 45)
     private String surname;
+    @jakarta.persistence.Basic
     @Column(name="email")
+    @jakarta.persistence.Column(name = "email", nullable = false, length = 45)
     private String email;
+    @jakarta.persistence.Basic
     @Column(name="password")
+    @jakarta.persistence.Column(name = "password", nullable = false, length = 45)
     private String password;
+    @jakarta.persistence.Basic
     @Column(name="role")
+    @jakarta.persistence.Column(name = "role", nullable = false, length = 45)
     private String role;
-
     public User() {}
+
     public User(Integer id, String name, String surname, String email, String password, String role) {
         this.id = id;
         this.name = name;
@@ -30,7 +44,6 @@ public class User {
         this.password = password;
         this.role = role;
     }
-
     public User(String name, String surname, String email, String password, String role) {
         this.name = name;
         this.surname = surname;
@@ -46,7 +59,6 @@ public class User {
         this.password = password;
         this.role = "default";
     }
-
 
     public String getName() {
         return name;
@@ -82,6 +94,10 @@ public class User {
 
     public Integer getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setId(Integer id) {

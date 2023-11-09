@@ -20,13 +20,13 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void create(User user) {
-        try{
+        //try{
             em.getTransaction().begin();
             em.persist(user);
             em.getTransaction().commit();
-        } catch(Exception e) {
-            LOGGER.error(e);
-        }
+        //} catch(Exception e) {
+          //  LOGGER.error(e);
+        //}
     }
 
     @Override
@@ -79,6 +79,7 @@ public class UserDaoImpl implements UserDao {
             criteria.select(from);
             criteria.where(builder.equal(from.get("email"), email));
             TypedQuery<User> typed = em.createQuery(criteria);
+            user = typed.getSingleResult();
         } catch(Exception e) {
             LOGGER.error(e);
         }

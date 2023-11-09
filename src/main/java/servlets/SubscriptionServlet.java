@@ -43,12 +43,12 @@ public class SubscriptionServlet extends HttpServlet {
     }
 
     public List<SubscriptionDto> map(List<Subscription> subscriptions, Map<Integer, Magazine> idToMagazine, Integer userId) {
-        return subscriptions.stream().filter(sub -> Objects.equals(sub.getUser().getId(), userId)).map(sub -> {
+        return subscriptions.stream().filter(sub -> Objects.equals(sub.getUserId(), userId)).map(sub -> {
            SubscriptionDto subDto = new SubscriptionDto();
            subDto.subscriptionId = sub.getId();
            subDto.purchaseDate = sub.getSubscriptionDate();
 
-           Magazine magazine = idToMagazine.get(sub.getMagazine().getId());
+           Magazine magazine = idToMagazine.get(sub.getMagazineId());
            subDto.name = magazine.getName();
            subDto.description = magazine.getDescription();
            subDto.price = magazine.getPrice();
@@ -69,8 +69,8 @@ public class SubscriptionServlet extends HttpServlet {
 
         Subscription subscription = new Subscription();
         subscription.setId(UUID.randomUUID().toString());
-        subscription.setMagazine(magazine);
-        subscription.setUser(user);
+        subscription.setMagazineId(magazine.getId());
+        subscription.setUserId(user.getId());
         subscription.setMonthsNumber(1);
         subscription.setSubscriptionDate(new Date());
 

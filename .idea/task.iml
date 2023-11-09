@@ -4,8 +4,9 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="IShopPersistence" value="48def3bd-4562-435f-ab05-b0dd5dbf0e29" />
+          <factory-entry name="IShopPersistence" value="c68a5c0f-5123-4db4-94f4-f034d87e9f9f" />
         </datasource-mapping>
         <naming-strategy-map />
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />

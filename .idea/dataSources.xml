@@ -12,5 +12,12 @@ C:/Users/Nout/Desktop/Logos курс/Java Advanced/Урок 4/task/src/main/reso
       <jdbc-url>jdbc:mysql://localhost:3306/jpa?useUnicode=true&amp;serverTimezone=UTC&amp;useSSL=true&amp;verifyServerCertificate=false</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="@localhost" uuid="c68a5c0f-5123-4db4-94f4-f034d87e9f9f">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
