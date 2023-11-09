@@ -7,5 +7,5 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface UserService extends AbstractCRUDService<User> {
-
+    User getUserByEmail(String email);
 }

@@ -1,13 +1,25 @@
 package models;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name="magazine")
 public class Magazine {
+    @Id
+    @Column(name="id")
+    @GeneratedValue
     private Integer id;
+    @Column(name="name")
     private String name;
+    @Column(name="description")
     private String description;
+    @Column(name="author")
     private String author;
+    @Column(name="price")
     private Integer price;
+
+    public Magazine() {}
 
     public Magazine(Integer id, String name, String description, String author, Integer price) {
         this.id = id;

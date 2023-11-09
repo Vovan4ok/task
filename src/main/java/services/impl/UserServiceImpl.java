@@ -42,7 +42,9 @@ public class UserServiceImpl implements UserService {
     public List<User> readAll() {
         return this.userDao.readAll();
     }
+
+    @Override
     public User getUserByEmail(String email) {
-        return readAll().stream().filter(user -> user.getEmail().equals(email)).findFirst().orElse(null);
+        return this.userDao.getUserByEmail(email);
     }
 }

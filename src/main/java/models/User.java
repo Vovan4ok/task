@@ -1,15 +1,27 @@
 package models;
 
+import javax.persistence.*;
 import java.util.Objects;
+@Entity
+@Table(name="user")
 
 public class User {
+    @Id
+    @Column(name="id")
+    @GeneratedValue
     private Integer id;
+    @Column(name="name")
     private String name;
+    @Column(name="surname")
     private String surname;
+    @Column(name="email")
     private String email;
+    @Column(name="password")
     private String password;
+    @Column(name="role")
     private String role;
 
+    public User() {}
     public User(Integer id, String name, String surname, String email, String password, String role) {
         this.id = id;
         this.name = name;

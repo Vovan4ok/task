@@ -1,6 +1,7 @@
 package shared;
 
-import java.sql.SQLException;
+import models.Magazine;
+
 import java.util.List;
 
 public interface AbstractDao <T> {
