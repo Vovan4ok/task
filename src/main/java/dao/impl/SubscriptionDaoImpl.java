@@ -15,13 +15,13 @@ public class SubscriptionDaoImpl implements SubscriptionDao {
 
     @Override
     public void create(Subscription subscription) {
-        try {
+        //try {
             em.getTransaction().begin();
             em.persist(subscription);
             em.getTransaction().commit();
-        } catch(Exception e) {
-            LOGGER.error(e);
-        }
+        //} catch(Exception e) {
+            //LOGGER.error(e);
+        //}
     }
 
     @Override
@@ -57,7 +57,7 @@ public class SubscriptionDaoImpl implements SubscriptionDao {
     public List<Subscription> readAll() {
         Query query = null;
         try {
-            query = em.createQuery("SELECT e FROM subscription e");
+            query = em.createQuery("SELECT e FROM Subscription e");
         } catch(Exception e) {
             LOGGER.error(e);
         }

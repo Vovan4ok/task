@@ -56,11 +56,11 @@ public class MagazineDaoImpl implements MagazineDao {
     @Override
     public List<Magazine> readAll() {
         Query query = null;
-        try {
-            query = em.createQuery("SELECT e FROM magazine e");
-        } catch(Exception e) {
-            LOGGER.error(e);
-        }
+        //try {
+            query = em.createQuery("SELECT e FROM Magazine e");
+        //} catch(Exception e) {
+          //  LOGGER.error(e);
+        //}
         return (List<Magazine>) query.getResultList();
     }
 }
