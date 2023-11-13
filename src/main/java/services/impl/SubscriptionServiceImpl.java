@@ -4,7 +4,6 @@ import dao.impl.SubscriptionDaoImpl;
 import models.Subscription;
 import services.SubscriptionService;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class SubscriptionServiceImpl implements SubscriptionService {
@@ -36,6 +35,9 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 
     @Override
     public void delete(Integer id) {
+
+    }
+    public void delete(String id) {
         this.subscriptionDao.delete(id);
     }
 

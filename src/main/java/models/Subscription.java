@@ -9,13 +9,18 @@ import java.util.Objects;
 @Entity
 @Table(name="subscription")
 public class Subscription {
-    @jakarta.persistence.GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     @jakarta.persistence.Id
     @Id
     @Column(name="id")
     @GeneratedValue
     @jakarta.persistence.Column(name = "id", nullable = false, length = 255)
     private String id;
+    @jakarta.persistence.Basic
+    @jakarta.persistence.Column(name = "user_id", nullable = false)
+    private Integer userId;
+    @jakarta.persistence.Basic
+    @jakarta.persistence.Column(name = "magazine_id", nullable = false)
+    private Integer magazineId;
     @jakarta.persistence.Basic
     @Column(name="months_number")
     @jakarta.persistence.Column(name = "months_number", nullable = false)
@@ -24,12 +29,6 @@ public class Subscription {
     @Column(name="subscription_date")
     @jakarta.persistence.Column(name = "subscription_date", nullable = false)
     private Date subscriptionDate;
-    @jakarta.persistence.Basic
-    @jakarta.persistence.Column(name = "user_id", nullable = false)
-    private int userId;
-    @jakarta.persistence.Basic
-    @jakarta.persistence.Column(name = "magazine_id", nullable = false)
-    private int magazineId;
 
     public Subscription() {}
 
@@ -43,10 +42,6 @@ public class Subscription {
 
     public Integer getMonthsNumber() {
         return monthsNumber;
-    }
-
-    public void setMonthsNumber(int monthsNumber) {
-        this.monthsNumber = monthsNumber;
     }
 
     public void setMonthsNumber(Integer monthsNumber) {
@@ -84,19 +79,19 @@ public class Subscription {
                 ", monthsNumber=" + monthsNumber + ", subscriptionDate=" + subscriptionDate + ']';
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    public int getMagazineId() {
+    public Integer getMagazineId() {
         return magazineId;
     }
 
-    public void setMagazineId(int magazineId) {
+    public void setMagazineId(Integer magazineId) {
         this.magazineId = magazineId;
     }
 }

@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 
 @WebServlet("/subscription")
 public class SubscriptionServlet extends HttpServlet {
-    private SubscriptionService subscriptionService = SubscriptionServiceImpl.getSubscriptionService();
+    private SubscriptionServiceImpl subscriptionService = SubscriptionServiceImpl.getSubscriptionService();
     private MagazineServiceImpl magazineService = MagazineServiceImpl.getMagazineService();
     private UserServiceImpl userService = UserServiceImpl.getUserService();
 
@@ -83,7 +83,7 @@ public class SubscriptionServlet extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String subscriptionId = request.getParameter("subscriptionId");
-        subscriptionService.delete(Integer.parseInt(subscriptionId));
+        subscriptionService.delete(subscriptionId);
 
         response.setCharacterEncoding("UTF-8");
         response.getWriter().write("Success");

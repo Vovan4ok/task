@@ -16,9 +16,13 @@ public class SubscriptionDaoImpl implements SubscriptionDao {
     @Override
     public void create(Subscription subscription) {
         //try {
+        if(em.getTransaction().isActive()) {
+            em.joinTransaction();
+        } else {
             em.getTransaction().begin();
-            em.persist(subscription);
-            em.getTransaction().commit();
+        }
+        em.persist(subscription);
+        em.getTransaction().commit();
         //} catch(Exception e) {
             //LOGGER.error(e);
         //}
@@ -26,6 +30,11 @@ public class SubscriptionDaoImpl implements SubscriptionDao {
 
     @Override
     public Subscription read(Integer id) {
+        return null;
+    }
+
+
+    public Subscription read(String id) {
         Subscription subscription = null;
         try {
             subscription = em.find(Subscription.class, id);
@@ -42,6 +51,11 @@ public class SubscriptionDaoImpl implements SubscriptionDao {
 
     @Override
     public void delete(Integer id) {
+
+    }
+
+
+    public void delete(String id) {
         try {
             Subscription subscription = read(id);
             em.getTransaction().begin();
